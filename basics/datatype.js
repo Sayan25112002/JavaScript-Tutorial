@@ -18,3 +18,4 @@ let state1
 
 console.log(typeof null) //object
 console.log(typeof undefined) //undefined
+console.table([name,age,isLoggedIn,state,state1])
