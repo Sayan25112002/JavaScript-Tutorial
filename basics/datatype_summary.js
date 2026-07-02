@@ -12,12 +12,15 @@ let myObj = {
 
 console.table([id,anotherId,id==anotherId,bigNumber, typeof(bigNumber)])
 
-console.table([items])
-console.table([myObj])
+console.log(items)
+console.log(myObj)
 
 const myFunction = function(){
-    console.log("Hello World - datatype_summary.js:19")
+    console.log("HELLO")
+    return ""
 }
 
 console.log(myFunction)
-console.table(myFunction)
+console.log(myFunction())
+console.table([typeof(items),typeof(myObj),typeof(myFunction),typeof(myFunction())])
+
