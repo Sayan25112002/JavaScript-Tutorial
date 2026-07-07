@@ -109,3 +109,16 @@ console.log(Object.values(singleUserDetail))
 console.log(Object.entries(singleUserDetail))
 
 console.log(singleUserDetail.hasOwnProperty('isLoggedIn'))
+
+//OBJECT DESTRUCTURING//
+const course = {
+    coursename:"JavaScript",
+    price:"999",
+    courseInstructor:"Hitesh sir"
+}
+
+const {courseInstructor} = course
+console.log(courseInstructor)
+
+const {courseInstructor:instructor} = course
+console.log(instructor)
