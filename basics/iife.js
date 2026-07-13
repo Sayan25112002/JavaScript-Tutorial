@@ -3,5 +3,11 @@
 })();
 
 ((name)=>{
-    console.log(`DB connected: Name : ${name}`)
+     console.log(`DB connected: Name : ${name}`)
 })("Sayan Majumdar");
+
+
+k=6
+console.log(k);
+let k;
+
