@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Third Video</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typeScript")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("Java")
+
+    //EDIT
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang)
+    //secondLang.innerHTML="C"
+    const newLi = document.createElement('li')
+    newLi.textContent="C"
+    secondLang.replaceWith(newLi)
+
+    //EDIT
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML="<li>SQL</li>"
+
+    //REMOVE
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    console.log(thirdLang)
+    thirdLang.remove()
+</script>
+</html>
