@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const promiseOne = new Promise(function(resolve,reject){
     setTimeout(function(){
         console.log('Async task is complete');
