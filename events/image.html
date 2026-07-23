@@ -5,29 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML EVENTS</title>
 </head>
-<body style="background-color: #414141; color: aliceblue;">
+<body id="bodyClass" style="background-color: #414141; color: aliceblue;">
     <h2>AMAZING IMAGES</h2>
     <ul id="images">
         <li><img width="200px" id="photoshop1" src="https://th.bing.com/th/id/OIP.dDKYQqVBsG1tIt2uJzEJHwHaHa?w=209&h=209&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"></li>
         <li><img width="200px" id="photoshop2" src="https://th.bing.com/th/id/OIP.dDKYQqVBsG1tIt2uJzEJHwHaHa?w=209&h=209&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3" onclick="alert('Default Image')"></li>
         <li><img width="200px" id="photoshop3" src="https://th.bing.com/th/id/OIP.dDKYQqVBsG1tIt2uJzEJHwHaHa?w=209&h=209&c=7&r=0&o=7&dpr=2&pid=1.7&rm=3"></li>
+        <a id="google" href="https://google.com">Google</a>
     </ul> 
 </body>
 <script>
+    document.getElementById('bodyClass').addEventListener('click',function(e){
+        console.log("Whole Body Clicked")
+    },true)
     document.getElementById('photoshop2').onclick=function(){
         alert("Clicked 2")
     }
     document.getElementById('images').addEventListener('click',function(e){
         console.log("Photo shop clicked inside the ul")
-    })
+    },false)
     document.getElementById("photoshop2").addEventListener('click',function(e){
         console.log("Photo shop clicked")
-        e.stopPropagation()
-    })
+        //e.stopPropagation()
+    },false)
     document.getElementById('google').addEventListener('click',function(e){
         console.log("google clicked");
         e.preventDefault()
-    }, false)
-
+    },true)
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e)
+        console.log(e.target)
+        console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+    })
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode)
+        console.log(e.target.tagName)
+        if(e.target.tagName==='IMG'){
+            let removeIt = e.target.parentNode
+            removeIt.parentNode.removeChild(removeIt)
+        }
+    })
 </script>
 </html>

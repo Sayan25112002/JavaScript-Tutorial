@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const time = function(){
+        console.log("Sonu")
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML="ASYNC. JS"
+    }
+    setTimeout(function(){
+        console.log("Sayan Majumdar")
+    },5000)
+    //setTimeout(changeText,5000)
+    setTimeout(time,3000)
+    const changeTiming = setTimeout(changeText,5000)
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeTiming)
+        console.log("STOPPED")
+    })
+    const sayDate = function(str){
+        console.log(str,Date.now())
+    }
+    let intervalId
+    document.querySelector('#start').addEventListener('click',function(){
+        intervalId=setInterval(sayDate,1000,"Now Date is ")
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalId)
+    })
+</script>
+</html>
